@@ -1,3 +1,8 @@
+<?php
+    include("includes/db.php");
+    include("includes/functions.php");
+    include("includes/session.php");
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 
