@@ -20,6 +20,16 @@
             </li>
         </ul>
 
+        <a href="#seller_list" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-light">Seller</a>
+        <ul class="collapse list-unstyled list-group-item list-group-item-action bg-light" id="seller_list">
+            <li>
+                <a class="list-group-item list-group-item-action bg-light" href="sellers.php">All Sellers</a>
+            </li>
+            <li>
+                <a class="list-group-item list-group-item-action bg-light" href="add_seller.php">Add Seller</a>
+            </li>
+        </ul>
+
 
 
         <a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a>

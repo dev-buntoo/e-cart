@@ -37,7 +37,7 @@ include("includes/session.php");
                 <!-- Page Content -->
 
 
-                <h4 class="mt-4">All Admin</h3>
+                <h4 class="mt-4">All Sellers</h3>
                     <hr>
                     <div class="container" style="padding: 70px;">
                         <table class="table table-bordered">
@@ -48,13 +48,14 @@ include("includes/session.php");
                                     <th scope="col">Phone</th>
                                     <th scope="col">Email</th>
                                     <th scope="col">City</th>
+                                    <th scope="col">Type</th>
                                     <th scope="col">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
                                 $i = 1;
-                                $sql = "SELECT * FROM admin_tbl WHERE type = '2' ORDER BY id DESC";
+                                $sql = "SELECT * FROM seller_tbl WHERE type = '1' ORDER BY id DESC";
                                 $fetch = mysqli_query($conn, $sql);
                                 if (mysqli_num_rows($fetch) > 0)
                                 {
@@ -67,17 +68,18 @@ include("includes/session.php");
                                     <td><?php echo htmlentities($row['phone']); ?></td>
                                     <td><?php echo htmlentities($row['email']); ?></td>
                                     <td><?php echo htmlentities($row['city']); ?></td>
+                                    <td><?php echo htmlentities("Seller"); ?></td>
                                     <td>
                                         <div class="row">
                                             <div class="col">
-                                                <a class="btn btn-outline-success" href="view_admin.php?id=<?php echo htmlentities($row['id']); ?>">View</a>
+                                                <a class="btn btn-outline-success" href="view_seller.php?id=<?php echo htmlentities($row['id']); ?>">View</a>
                                             </div>
                                             <div class="col">
-                                                <a class="btn btn-outline-warning" href="edt_admin.php?id=<?php echo htmlentities($row['id']); ?>">Edit</a>
+                                                <a class="btn btn-outline-warning" href="edt_seller.php?id=<?php echo htmlentities($row['id']); ?>">Edit</a>
                                             </div>
                                             <div class="col">
                                             <form method="POST" enctype="multipart/form-data">
-                                                <button class="btn btn-outline-danger" value="<?php echo htmlentities($row['id']); ?>" name="delete_admin">Delete</button>
+                                                <button class="btn btn-outline-danger" value="<?php echo htmlentities($row['id']); ?>" name="delete_seller"> X </button>
                                                 </form>
                                             </div>
                                         </div>
