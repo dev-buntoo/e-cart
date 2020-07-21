@@ -13,7 +13,7 @@
         <a href="#admin_list" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-light">Admin</a>
         <ul class="collapse list-unstyled list-group-item list-group-item-action bg-light" id="admin_list">
             <li>
-                <a class="list-group-item list-group-item-action bg-light" href="admin.php">All Admins</a>
+                <a class="list-group-item list-group-item-action bg-light" href="admins.php">All Admins</a>
             </li>
             <li>
                 <a class="list-group-item list-group-item-action bg-light" href="add_admin.php">Add Admin</a>
