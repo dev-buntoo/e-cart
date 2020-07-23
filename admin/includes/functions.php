@@ -120,7 +120,7 @@ if(isset($_POST['delete_admin'])){
 
 
 
-//This function add new Seller/Partner/Helper
+//This function add new Seller
 if(isset($_POST['add_seller'])){
    $name = $_POST['name'];
    $phone = $_POST['phone'];
@@ -148,7 +148,7 @@ if(isset($_POST['add_seller'])){
    }
 
 
-//This function Update Existing Seller/Partner/Helper
+//This function Update Existing Seller
 if(isset($_POST['update_seller'])){
    $update_id = $_POST['update_seller'];
    $name = $_POST['name'];
@@ -202,4 +202,75 @@ if(isset($_POST['update_seller'])){
       }
 
 
+//This function add new Store
+if(isset($_POST['add_store'])){
+   $name = $_POST['name'];
+   $phone = $_POST['phone'];
+   $email = $_POST['email'];
+   $user_id = $_POST['user_id'];
+   $address = $_POST['address'];
+   $description = $_POST['description'];
+
+      $sql = "INSERT INTO store_tbl (name, phone, email, user_id, address, description)
+   VALUES ('$name', '$phone', '$email', '$user_id', '$address', '$description')";
+   
+   if ($conn->query($sql) === TRUE) {
+     echo "<script> window.alert('New record created successfully');</script>
+     <script type='text/javascript'>window.open('stores.php','_self')</script>
+     ";
+   } else {
+     echo "Error: " . $sql . "<br>" . $conn->error;
+   }
+   
+
+   }
+
+
+
+   //This function updates existing Store
+if(isset($_POST['update_store'])){
+   $update_id = $_POST['update_store'];
+   $name = $_POST['name'];
+   $phone = $_POST['phone'];
+   $email = $_POST['email'];
+   $user_id = $_POST['user_id'];
+   $address = $_POST['address'];
+   $description = $_POST['description'];
+
+      $sql = "UPDATE store_tbl SET 
+      name = '$name',
+      phone = '$phone',
+      email = '$email',
+      user_id = '$user_id',
+      address = '$address',
+      description = '$description'
+      WHERE id = '$update_id' ";
+   
+   if ($conn->query($sql) === TRUE) {
+     echo "<script> window.alert('Record Updated Successfully');</script>
+     <script type='text/javascript'>window.open('stores.php','_self')</script>
+     ";
+   } else {
+     echo "Error: " . $sql . "<br>" . $conn->error;
+   }
+   }
+
+
+   
+ //This function Delete Existing Seller
+if(isset($_POST['delete_store'])){
+   $store_id = $_POST['delete_store'];
+
+   $sql = "DELETE FROM store_tbl WHERE id = '$store_id'";
+
+
+   if ($conn->query($sql) === TRUE) { 
+      echo "<script> window.alert('Record Deleted Successfully');</script>
+      <script type='text/javascript'>window.open('stores.php','_self')</script>
+      ";
+   } else {
+     echo "Error: " . $sql . "<br>" . $conn->error;
+   }
+   
+   }
 ?>
