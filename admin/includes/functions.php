@@ -210,9 +210,10 @@ if(isset($_POST['add_store'])){
    $user_id = $_POST['user_id'];
    $address = $_POST['address'];
    $description = $_POST['description'];
+   $status = "Unapproved";
 
-      $sql = "INSERT INTO store_tbl (name, phone, email, user_id, address, description)
-   VALUES ('$name', '$phone', '$email', '$user_id', '$address', '$description')";
+      $sql = "INSERT INTO store_tbl (name, phone, email, user_id, address, description,status)
+   VALUES ('$name', '$phone', '$email', '$user_id', '$address', '$description', '$status')";
    
    if ($conn->query($sql) === TRUE) {
      echo "<script> window.alert('New record created successfully');</script>
@@ -273,4 +274,26 @@ if(isset($_POST['delete_store'])){
    }
    
    }
+
+
+   //This function updates Store Status
+   if(isset($_POST['update_status'])){
+      $update_id = $_POST['update_status'];
+      $status = $_POST['status'];
+      $description = $_POST['description'];
+      
+   
+         $sql = "UPDATE store_tbl SET 
+         status = '$status',
+         description = '$description'
+         WHERE id = '$update_id' ";
+      
+      if ($conn->query($sql) === TRUE) {
+        echo "<script> window.alert('Status Updated Successfully');</script>
+        <script type='text/javascript'>window.open('stores.php','_self')</script>
+        ";
+      } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+      }
+      }
 ?>

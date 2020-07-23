@@ -72,7 +72,11 @@ include("includes/session.php");
                                     <td><?php echo htmlentities($row['store_no']); ?></td>
                                     <td><?php echo htmlentities($row['store_email']); ?></td>
                                     <td><?php echo htmlentities($row['store_owner']); ?></td>
-                                    <td><?php echo htmlentities($row['store_status']); ?></td>
+                                    <td class="text-center">
+                                        <?php echo htmlentities($row['store_status']); ?>
+                                        <hr>
+                                        <a class="btn btn-outline-primary" href="update_status.php?id=<?php echo htmlentities($row['store_id']); ?>">Update</a>
+                                    </td>
                                     <td>
                                         <div class="row">
                                             <div class="col">
