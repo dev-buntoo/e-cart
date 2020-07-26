@@ -41,6 +41,19 @@
         </ul>
 
 
+
+        <a href="#customer_list" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-light">Customers</a>
+        <ul class="collapse list-unstyled list-group-item list-group-item-action bg-light" id="customer_list">
+            <li>
+                <a class="list-group-item list-group-item-action bg-light" href="customers.php">All Customers</a>
+            </li>
+            <li>
+                <a class="list-group-item list-group-item-action bg-light" href="add_customer.php">Add Customer</a>
+            </li>
+        </ul>
+
+
+
         <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-light">Home</a>
         <ul class="collapse list-unstyled list-group-item list-group-item-action bg-light" id="homeSubmenu">
             <li>
