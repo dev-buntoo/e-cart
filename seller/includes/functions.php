@@ -62,4 +62,57 @@ if(isset($_POST['add_store'])){
    }
 
 
+   //This function add new Category
+if(isset($_POST['add_category'])){
+   $name = $_POST['name'];
+
+      $sql = "INSERT INTO category_tbl (name, store_id)
+   VALUES ('$name', '$store_id')";
+   
+   if ($conn->query($sql) === TRUE) {
+     echo "
+     <script type='text/javascript'>window.open('categories.php','_self')</script>
+     ";
+   } else {
+     echo "Error: " . $sql . "<br>" . $conn->error;
+   }
+   
+
+   }
+
+      //This function Update Existing Category
+if(isset($_POST['update_cat'])){
+   $name = $_POST['name'];
+   $cat_id = $_POST['update_cat'];
+      $sql = "UPDATE category_tbl SET
+      name = '$name'
+      WHERE id = $cat_id ";
+   
+   if ($conn->query($sql) === TRUE) {
+     echo "
+     <script type='text/javascript'>window.open('categories.php','_self')</script>
+     ";
+   } else {
+     echo "Error: " . $sql . "<br>" . $conn->error;
+   }
+   
+
+   }
+
+       //This function Delete Existing Category
+if(isset($_POST['delete_cat'])){
+   $name = $_POST['name'];
+   $cat_id = $_POST['delete_cat'];
+      $sql = "DELETE FROM category_tbl WHERE id = $cat_id ";
+   
+   if ($conn->query($sql) === TRUE) {
+     echo "
+     <script type='text/javascript'>window.open('categories.php','_self')</script>
+     ";
+   } else {
+     echo "Error: " . $sql . "<br>" . $conn->error;
+   }
+   
+
+   }
 ?>

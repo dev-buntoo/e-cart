@@ -1,6 +1,9 @@
 <?php
 include("includes/db.php");
 include("includes/session.php");
+$get_id = $_GET['id'];
+$get_cat_sql = "SELECT * FROM category_tbl WHERE id = '$get_id'";
+$row_category= mysqli_fetch_array(mysqli_query($conn, $get_cat_sql));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,20 +43,20 @@ include("includes/session.php");
                     <!-- Page Content -->
 
 
-                    <h4 class="mt-4">Add A New Category</h3>
+                    <h4 class="mt-4">Update Category</h3>
                         <hr>
                         <div class="container" style="padding: 70px;">
                             <form method="POST" enctype="multipart/form-data">
                                 <div class="form-row">
                                     <div class="form-group col-md-6 offset-md-3">
                                         <label>Category Name</label>
-                                        <input type="text" class="form-control" name="name" required>
+                                        <input type="text" class="form-control" name="name" value="<?php echo htmlentities($row_category['name'])?>" required>
                                     </div>
                                 </div>
                                 <hr>
 
                                 <div class="offset-5">
-                                    <button onclick="confirm('Are you sure you want to add a new Category');" type="submit" class="btn btn-outline-success" name="add_category">Add category</button>
+                                    <button value="<?php echo htmlentities($row_category['id'])?>"  type="submit" class="btn btn-outline-success" name="update_cat">Update Category</button>
                                 </div>
                             </form>
                         </div>

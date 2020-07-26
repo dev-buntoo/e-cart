@@ -66,17 +66,21 @@ $row = mysqli_fetch_array(mysqli_query($conn, $sql));
                                     <select class="form-control" name="user_id" required>
                                         <?php
                                         $seller_id = $row['user_id'];
-                                        $current_seller_sql = "SELECT id, name 
+                                        $current_seller_sql = "SELECT * 
                                         FROM seller_tbl WHERE id = '$seller_id'";
-                                        $current_seller_row = mysqli_fetch_array(mysqli_query($conn, $sql));
+                                        $current_seller_row = mysqli_fetch_array(mysqli_query($conn, $current_seller_sql));
                                         ?>
                                         <option value="<?php echo htmlentities($current_seller_row['id']); ?>" selected><?php echo htmlentities($current_seller_row['name']); ?></option>
                                         <?php
                                         $free_seller_sql = "SELECT
-                                        seller_tbl.name, seller_tbl.id
-                                        FROM seller_tbl
-                                        LEFT JOIN store_tbl ON store_tbl.user_id = seller_tbl.id
-                                        WHERE store_tbl.user_id IS NULL";
+                                        seller_tbl.name,
+                                        seller_tbl.id,
+                                        seller_tbl.type
+                                    FROM
+                                        seller_tbl
+                                    LEFT JOIN store_tbl ON store_tbl.user_id = seller_tbl.id
+                                    WHERE
+                                        store_tbl.user_id IS NULL AND seller_tbl.type = '1'";
                                         $fetch_free_seller = mysqli_query($conn, $free_seller_sql);
                                         foreach( $fetch_free_seller as $free_seller)
                                         {

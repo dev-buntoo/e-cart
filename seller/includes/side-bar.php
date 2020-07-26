@@ -2,7 +2,9 @@
     <b>
     <div class="sidebar-heading">The Online Super Store </div>
     <hr>
-    <div class="sidebar-heading">Seller Panel </div>
+    <div class="sidebar-heading">
+        <?php echo htmlentities($store_name); ?>
+        <br>Seller Panel </div>
     <hr>
 </b>
     <div class="list-group list-group-flush">
