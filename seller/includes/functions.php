@@ -35,4 +35,30 @@ if(isset($_POST['login'])){
 }
 
 
+
+//This function add new Store
+if(isset($_POST['add_store'])){
+   $name = $_POST['name'];
+   $phone = $_POST['phone'];
+   $email = $_POST['email'];
+   $user_id = $login_session_id;
+   $address = $_POST['address'];
+   $description = $_POST['description'];
+   $status = "Unapproved";
+
+      $sql = "INSERT INTO store_tbl (name, phone, email, user_id, address, description,status)
+   VALUES ('$name', '$phone', '$email', '$user_id', '$address', '$description', '$status')";
+   
+   if ($conn->query($sql) === TRUE) {
+     echo "<script> window.alert('Congragulations $login_session_name !. Your store is Now Registered with us and is now under review. Keep Visiting your panel for further information. Thanks');</script>
+     <script type='text/javascript'>window.open('index.php','_self')</script>
+     ";
+   } else {
+     echo "Error: " . $sql . "<br>" . $conn->error;
+   }
+   
+
+   }
+
+
 ?>

@@ -285,7 +285,7 @@ if(isset($_POST['delete_store'])){
    
          $sql = "UPDATE store_tbl SET 
          status = '$status',
-         description = '$description'
+         status_description = '$description'
          WHERE id = '$update_id' ";
       
       if ($conn->query($sql) === TRUE) {

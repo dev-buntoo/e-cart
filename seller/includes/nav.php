@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
   <?php
-  if($store_counter != 0){ ?>
+  if($store_counter != 0 && $store_status=="Approved"){ ?>
         <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
