@@ -45,9 +45,10 @@ if(isset($_POST['add_store'])){
    $address = $_POST['address'];
    $description = $_POST['description'];
    $status = "Unapproved";
+   $status_desc = "Greeting, Dear customer, We are glad to know the your are intrested in doing business with us. We have recived your request for opening store with us. Currently it is under review. You can Start your business after your store is approved";
 
-      $sql = "INSERT INTO store_tbl (name, phone, email, user_id, address, description,status)
-   VALUES ('$name', '$phone', '$email', '$user_id', '$address', '$description', '$status')";
+      $sql = "INSERT INTO store_tbl (name, phone, email, user_id, address, description,status, status_description)
+   VALUES ('$name', '$phone', '$email', '$user_id', '$address', '$description', '$status', '$status_desc')";
    
    if ($conn->query($sql) === TRUE) {
      echo "<script> window.alert('Congragulations $login_session_name !. Your store is Now Registered with us and is now under review. Keep Visiting your panel for further information. Thanks');</script>
