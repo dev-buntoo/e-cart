@@ -42,7 +42,7 @@ $row = mysqli_fetch_array(mysqli_query($conn, $sql));
                 <!-- Page Content -->
 
 
-                <h4 class="mt-4">Update Admin</h3>
+                <h4 class="mt-4">Update Store Status</h3>
                     <hr>
                     <div class="container" style="padding: 70px;">
                         <form method="POST" enctype="multipart/form-data">

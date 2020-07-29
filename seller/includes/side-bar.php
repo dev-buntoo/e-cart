@@ -15,20 +15,20 @@
         <a href="#category_list" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-light">Category</a>
         <ul class="collapse list-unstyled list-group-item list-group-item-action bg-light" id="category_list">
             <li>
-                <a class="list-group-item list-group-item-action bg-light" href="categorys.php">All categories</a>
+                <a class="list-group-item list-group-item-action bg-light" href="categories.php">All categories</a>
             </li>
             <li>
                 <a class="list-group-item list-group-item-action bg-light" href="add_category.php">Add category</a>
             </li>
         </ul>
 
-        <a href="#seller_list" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-light">Seller</a>
-        <ul class="collapse list-unstyled list-group-item list-group-item-action bg-light" id="seller_list">
+        <a href="#product_list" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-light">Products</a>
+        <ul class="collapse list-unstyled list-group-item list-group-item-action bg-light" id="product_list">
             <li>
-                <a class="list-group-item list-group-item-action bg-light" href="sellers.php">All Sellers</a>
+                <a class="list-group-item list-group-item-action bg-light" href="products.php">All Products</a>
             </li>
             <li>
-                <a class="list-group-item list-group-item-action bg-light" href="add_seller.php">Add Seller</a>
+                <a class="list-group-item list-group-item-action bg-light" href="add_product.php">Add Product</a>
             </li>
         </ul>
 

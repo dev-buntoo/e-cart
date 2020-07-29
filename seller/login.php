@@ -25,7 +25,7 @@ if(isset($_SESSION['super-store-seller'])){
     <div class="col-md-4 offset-md-4 " style="margin-top: 56px ;" id="wrapper">
 
         <div style="padding: 25px; " class="border">
-            <h3 class=" text-center display-4">Login</h3>
+            <h3 class=" text-center display-4">Seller Login</h3>
             <form method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label>Email address</label>
