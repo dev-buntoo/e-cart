@@ -220,4 +220,86 @@ if(isset($_POST['update_product'])){
 
    }
 
+
+
+   
+//This function add new Customer
+if(isset($_POST['add_customer'])){
+   $name = $_POST['name'];
+   $phone = $_POST['phone'];
+   $email = $_POST['email'];
+   $password = $_POST['password'];
+   $address = $_POST['address'];
+   $city = $_POST['city'];
+   $state = $_POST['state'];
+
+   
+   $sql = "INSERT INTO customer_tbl (name, phone, email, password, address, city, state)
+   VALUES ('$name', '$phone', '$email', '$password', '$address', '$city', '$state')";
+   
+   if ($conn->query($sql) === TRUE) {
+     echo "<script> window.alert('New record created successfully');</script>
+     <script type='text/javascript'>window.open('customers.php','_self')</script>
+     ";
+   } else {
+     echo "Error: " . $sql . "<br>" . $conn->error;
+   }
+   }
+
+
+
+//This function Update Existing Customer
+if(isset($_POST['update_customer'])){
+
+   $update_id = $_POST['update_customer'];
+   $name = $_POST['name'];
+   $phone = $_POST['phone'];
+   $email = $_POST['email'];
+   $password = $_POST['password'];
+   $address = $_POST['address'];
+   $city = $_POST['city'];
+   $state = $_POST['state'];
+
+   $sql = " UPDATE customer_tbl SET 
+   name = '$name',
+   phone = '$phone', 
+   email = '$email',
+   password = '$password', 
+   address = '$address', 
+   city = '$city', 
+   state = '$state'
+   WHERE id = '$update_id' ";
+
+
+   if ($conn->query($sql) === TRUE) { 
+      echo "<script> window.alert('Record Updated Successfully');</script>
+      <script type='text/javascript'>window.open('customers.php','_self')</script>
+      ";
+   } else {
+     echo "Error: " . $sql . "<br>" . $conn->error;
+   }
+   
+   }
+
+
+
+   //This function Delete Existing Customer
+if(isset($_POST['delete_customer'])){
+
+   $customer_id = $_POST['delete_customer'];
+
+   $sql = "DELETE FROM customer_tbl WHERE id = '$customer_id'";
+
+
+   if ($conn->query($sql) === TRUE) { 
+      echo "<script> window.alert('Record Deleted Successfully');</script>
+      <script type='text/javascript'>window.open('customers.php','_self')</script>
+      ";
+   } else {
+     echo "Error: " . $sql . "<br>" . $conn->error;
+   }
+   
+   }
+
+
 ?>

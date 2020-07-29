@@ -95,7 +95,7 @@ include("includes/session.php");
                                 <hr>
 
                                 <div class="offset-5">
-                                    <button onclick="confirm('Are you sure you want to add a new Product');" type="submit" class="btn btn-outline-success" name="update_product">Udate Product</button>
+                                    <button onclick="confirm('Are you sure?');" type="submit" class="btn btn-outline-success" name="update_product">Udate Product</button>
                                 </div>
                             </form>
                         </div>

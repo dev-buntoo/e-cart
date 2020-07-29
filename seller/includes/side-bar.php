@@ -32,15 +32,7 @@
             </li>
         </ul>
 
-        <a href="#store_list" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-light">Stores</a>
-        <ul class="collapse list-unstyled list-group-item list-group-item-action bg-light" id="store_list">
-            <li>
-                <a class="list-group-item list-group-item-action bg-light" href="stores.php">All Stores</a>
-            </li>
-            <li>
-                <a class="list-group-item list-group-item-action bg-light" href="add_store.php">Add Store</a>
-            </li>
-        </ul>
+      
 
 
 

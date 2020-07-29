@@ -316,7 +316,7 @@ if(isset($_POST['add_customer'])){
    
    if ($conn->query($sql) === TRUE) {
      echo "<script> window.alert('New record created successfully');</script>
-     <script type='text/javascript'>window.open('customer.php','_self')</script>
+     <script type='text/javascript'>window.open('customers.php','_self')</script>
      ";
    } else {
      echo "Error: " . $sql . "<br>" . $conn->error;
