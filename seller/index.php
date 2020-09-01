@@ -42,8 +42,18 @@ include("includes/functions.php");
                 <div class="container-fluid">
                     <!-- Page Content -->
 
-
+                    <?php
+                    if($login_session_user_type == 1)
+                    {
+                    ?>
                     <h1 class="mt-4">Seller's Panel</h1>
+                    <?php
+                    } else{
+                    ?>
+                    <h1 class="mt-4">Helper Seller's Panel</h1>
+                    <?php
+                    }
+                    ?>
                     <p> Page Content Goes Here</p>
 
 

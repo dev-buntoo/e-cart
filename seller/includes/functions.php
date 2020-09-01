@@ -302,4 +302,83 @@ if(isset($_POST['delete_customer'])){
    }
 
 
+
+
+//This function add new Helper/partner Seller
+if(isset($_POST['add_helper'])){
+   $name = $_POST['name'];
+   $phone = $_POST['phone'];
+   $email = $_POST['email'];
+   $password = $_POST['password'];
+   $address = $_POST['address'];
+   $city = $_POST['city'];
+   $state = $_POST['state'];
+   $zip = $_POST['zip'];
+   $type = $_POST['type'];
+
+      $h_store_id = $store_id;
+      $sql = "INSERT INTO seller_tbl (name, phone, email, password, address, city, state, zip, type, h_store_id)
+   VALUES ('$name', '$phone', '$email', '$password', '$address', '$city', '$state', '$zip','$type', '$h_store_id')";
+   
+   if ($conn->query($sql) === TRUE) {
+     echo "<script> window.alert('New record created successfully');</script>
+     <script type='text/javascript'>window.open('helpers.php','_self')</script>
+     ";
+   } else {
+     echo "Error: " . $sql . "<br>" . $conn->error;
+   }
+   
+
+   }
+
+
+//This function Update Existing helper Seller
+if(isset($_POST['update_helper'])){
+   $update_id = $_POST['update_seller'];
+   $name = $_POST['name'];
+   $phone = $_POST['phone'];
+   $email = $_POST['email'];
+   $password = $_POST['password'];
+   $address = $_POST['address'];
+   $city = $_POST['city'];
+   $state = $_POST['state'];
+
+
+   $sql = " UPDATE seller_tbl SET 
+   name = '$name',
+   phone = '$phone', 
+   email = '$email',
+   password = '$password', 
+   address = '$address', 
+   city = '$city', 
+   state = '$state' 
+   WHERE id = '$update_id' ";
+
+
+   if ($conn->query($sql) === TRUE) { 
+      echo "<script> window.alert('Record Updated Successfully');</script>
+      <script type='text/javascript'>window.open('helpers.php','_self')</script>
+      ";
+   } else {
+     echo "Error: " . $sql . "<br>" . $conn->error;
+   }
+   }
+
+   //This function Delete Existing helper Seller
+   if(isset($_POST['delete_helper'])){
+
+      $id = $_POST['delete_helper'];
+   
+      $sql = "DELETE FROM seller_tbl WHERE id = '$id' && h_store_id = '$store_id' && type = '2'";
+   
+   
+      if ($conn->query($sql) === TRUE) { 
+         echo "<script> window.alert('Record Deleted Successfully');</script>
+         <script type='text/javascript'>window.open('helpers.php','_self')</script>
+         ";
+      } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+      }
+      
+      }
 ?>

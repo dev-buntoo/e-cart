@@ -40,12 +40,12 @@ include("includes/session.php");
                     <!-- Page Content -->
 
 
-                    <h4 class="mt-4">Update Customer</h3>
+                    <h4 class="mt-4">Update Helper Seller</h3>
                         <hr>
                         <?php 
                         //Getting Id From the address
-$cus_id = $_GET['id'];
-$sql = "SELECT * FROM customer_tbl WHERE id = '$cus_id'";
+$id = $_GET['id'];
+$sql = "SELECT * FROM seller_tbl WHERE id = '$id' && h_store_id = '$store_id' && type = '2'";
 $row = mysqli_fetch_array(mysqli_query($conn, $sql));
 ?>
                         <div class="container" style="padding: 70px;">
@@ -124,7 +124,7 @@ $row = mysqli_fetch_array(mysqli_query($conn, $sql));
                             <hr>
 
                             <div class="offset-5">
-                                <button onclick="confirm('Are you sure ?');" class="btn btn-outline-success" name="update_customer" value="<?php echo htmlentities($row['id']); ?>">Update Customer</button>
+                                <button onclick="confirm('Are you sure ?');" class="btn btn-outline-success" name="update_helper" value="<?php echo htmlentities($row['id']); ?>">Update Seller </button>
                             </div>
                         </form>
                         </div>
