@@ -59,12 +59,18 @@
 
 
 
-        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-light">Home</a>
-        <ul class="collapse list-unstyled list-group-item list-group-item-action bg-light" id="homeSubmenu">
+        <a href="#promoSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-light">Promotions</a>
+        <ul class="collapse list-unstyled list-group-item list-group-item-action bg-light" id="promoSubmenu">
             <li>
-                <a class="list-group-item list-group-item-action bg-light" href="">Home 1</a>
+                <a class="list-group-item list-group-item-action bg-light" href="promos.php">Active Promotion</a>
+            </li>
+            <li>
+                <a class="list-group-item list-group-item-action bg-light" href="add_promo.php">Add Promotion</a>
             </li>
         </ul>
+
+
+
         <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
 
     </div>

@@ -381,4 +381,76 @@ if(isset($_POST['update_helper'])){
       }
       
       }
+
+
+
+
+
+//This function add Promotion to a product
+if(isset($_POST['add_promo'])){
+   $product_id = $_POST['product_id'];
+   $promo_price = $_POST['promo_price'];
+
+   $sql = "INSERT INTO promos_tbl (store_id, pro_id, promo_price) VALUES ($store_id, $product_id, $promo_price); ";
+   $sql.= "UPDATE product_tbl SET promo = '1' WHERE id = '$product_id' && store_id = '$store_id' ; ";
+   
+   if ($conn->multi_query($sql) === TRUE) {
+     echo "<script> window.alert('Promo Created successfully');</script>
+     <script type='text/javascript'>window.open('promos.php','_self')</script>
+     ";
+   } else {
+     echo "Error: " . $sql . "<br>" . $conn->error;
+   }
+   
+
+   }
+
+
+//This function Update Existing promotion
+if(isset($_POST['update_promo'])){
+   $update_id = $_POST['update_promo'];
+   $promo_price = $_POST['promo_price'];
+   
+
+
+   $sql = " UPDATE promos_tbl SET 
+   promo_price = '$promo_price' 
+   WHERE id = '$update_id' && store_id = '$store_id' ";
+
+
+   if ($conn->query($sql) === TRUE) { 
+      echo "<script> window.alert('Promotion Updated Successfully');</script>
+      <script type='text/javascript'>window.open('promos.php','_self')</script>
+      ";
+   } else {
+     echo "Error: " . $sql . "<br>" . $conn->error;
+   }
+   }
+   
+
+//This function delete promotion
+   if(isset($_POST['delete_promo'])){
+
+      $id = $_POST['delete_promo'];
+      $get_pro_sql = "SELECT pro_id FROM promos_tbl WHERE id = '$id' && store_id = '$store_id'";
+      $run= mysqli_fetch_array(mysqli_query($conn, $get_pro_sql));
+      echo $product_id = $run['pro_id'];
+      $sql = "DELETE FROM promos_tbl WHERE id = '$id' && store_id = '$store_id';";
+      $sql.= "UPDATE product_tbl SET promo = '0' WHERE id = '$product_id' && store_id = '$store_id' ; ";
+      if ($conn->multi_query($sql) === TRUE) { 
+         echo "<script> window.alert('Promotion Deleted Successfully');</script>
+         <script type='text/javascript'>window.open('promos.php','_self')</script>
+         ";
+      } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+       }
+      
+      }
+
+
+
+
+
+
+
 ?>
