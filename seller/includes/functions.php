@@ -45,7 +45,7 @@ if(isset($_POST['add_store'])){
    $address = $_POST['address'];
    $description = $_POST['description'];
    $status = "Unapproved";
-   $status_desc = "Greeting, Dear customer, We are glad to know the your are intrested in doing business with us. We have recived your request for opening store with us. Currently it is under review. You can Start your business after your store is approved";
+   $status_desc = "Greeting, Dear Seller, We are glad to know the your are intrested in doing business with us. We have recived your request for opening store with us. Currently it is under review. You can Start your business after your store is approved";
 
       $sql = "INSERT INTO store_tbl (name, phone, email, user_id, address, description,status, status_description)
    VALUES ('$name', '$phone', '$email', '$user_id', '$address', '$description', '$status', '$status_desc')";
