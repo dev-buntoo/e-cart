@@ -51,6 +51,9 @@
                 </li>
     <?php } else {?>
                 <li class="nav-item nav-link js-scroll-trigger" role="presentation">
+                    <a class="nav-link js-scroll-trigger" href="seller-reg.php"><u>Seller Registration</u></a>
+                </li>
+                <li class="nav-item nav-link js-scroll-trigger" role="presentation">
                     <a class="nav-link js-scroll-trigger" href="signin.php"><u>Sign IN</u></a>
                 </li>
                 <li class="nav-item nav-link js-scroll-trigger" role="presentation">

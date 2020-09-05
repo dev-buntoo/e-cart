@@ -87,4 +87,43 @@ if(isset($_POST['send_msg'])){
 
   }
 
+
+
+  //This function add new Seller
+  if(isset($_POST['seller-reg'])){
+    $name = $_POST['name'];
+    $phone = $_POST['phone'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $address = $_POST['address'];
+    $city = $_POST['city'];
+    $state = $_POST['state'];
+    $zip = $_POST['zip'];
+    $type = 1;
+  
+       $h_store_id = 0;
+       $sql = "INSERT INTO seller_tbl (name, phone, email, password, address, city, state, zip, type, h_store_id)
+    VALUES ('$name', '$phone', '$email', '$password', '$address', '$city', '$state', '$zip','$type', '$h_store_id')";
+    
+    if ($conn->query($sql) === TRUE) {
+      echo "<script> window.alert('Dear Seller! Thank You Registoring With Us. Please Login at localhot/ecart/seller For Completing Registration Application.');</script>
+      <script type='text/javascript'>window.open('seller/','_self')</script>
+      ";
+    } else {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+    
+  
+    }
+
+
+
+
+
+
+
+
+
+
+
 ?>
