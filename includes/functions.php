@@ -64,6 +64,27 @@ if(isset($_POST['signup'])){
     }
     }
 
+//This function Add message
+if(isset($_POST['send_msg'])){
+  $name = $_POST['name'];
+  $phone = $_POST['phone'];
+  $email = $_POST['email'];
+  $message = $_POST['message'];
+  
 
+     $sql = "INSERT INTO message_tbl (name, phone, email, message)
+  VALUES ('$name', '$phone', '$email', '$message')";
+  
+  if ($conn->query($sql) === TRUE) {
+    echo "
+    <script> window.alert('Thank You For Contacting Us. We Will Reach You As Soon As Posible');</script>
+    <script type='text/javascript'>window.open('index.php','_self')</script>
+    ";
+  } else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+  }
+  
+
+  }
 
 ?>
