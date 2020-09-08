@@ -67,8 +67,10 @@ if (mysqli_num_rows($fetch)>0){?>
                                 ?>
                                 <small class="text-success">Reviews ( <?php echo$count; ?> )</small>
                                 </a>
-                                <?php if(isset($_SESSION['super-store-customer'])){ ?>
+                                
                                 <div class="row text-center">
+                                <?php if(isset($_SESSION['super-store-customer'])){ ?>
+
                                     <div class="col">
                                     <?php
                                     $pro_id = $product['pro_id'];
@@ -97,7 +99,6 @@ if (mysqli_num_rows($fetch)>0){?>
                                     </div>
 
                                 <?php } ?>
-                                    </div>
                                 </div>
                             </div>
                         </div> 
