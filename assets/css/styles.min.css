@@ -163,6 +163,17 @@
 	color: red
 }
 
+.fa.fa-heart {
+	font-size: xx-large;
+	color: #fff
+}
+
+.fa.fa-heart:hover {
+	color: red
+}
+
+
+
 .intro-body {
 	height: 100vh
 }

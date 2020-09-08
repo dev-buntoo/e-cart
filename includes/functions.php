@@ -30,12 +30,10 @@ if(isset($_POST['signin'])){
  
   if($count == 1) {
 
-    echo "<script> window.alert('In If');</script>";
      $_SESSION['super-store-customer'] = $row['id'];
  
      header("location: index.php");
   }else {
-    echo "<script> window.alert('in Else');</script>";
      $error = "Your Email or Password is invalid";
   }
  }
@@ -117,6 +115,34 @@ if(isset($_POST['send_msg'])){
     }
 
 
+//This function add item to fav list
+if(isset($_POST['add_to_fav'])){
+  $pro_id = $_POST['add_to_fav'];
+  $sql = "INSERT INTO fav_tbl (pro_id, user_id) VALUES ('$pro_id', '$login_session_id')";
+  if($conn->query($sql) === TRUE){
+    echo "<script> window.alert('Item Added to Fav List');</script>
+      <script type='text/javascript'>window.open('','_self')</script>
+      ";
+  }
+  else{
+    echo "Error: " . $sql . "<br>" . $conn->error;
+  }
+}
+
+
+//This function remove item from fav list
+if(isset($_POST['remove_fav'])){
+  $pro_id = $_POST['remove_fav'];
+  $sql = "DELETE FROM fav_tbl WHERE pro_id = '$pro_id' && user_id = '$login_session_id'";
+  if($conn->query($sql) === TRUE){
+    echo "<script> window.alert('Item Removed from Fav List');</script>
+      <script type='text/javascript'>window.open('','_self')</script>
+      ";
+  }
+  else{
+    echo "Error: " . $sql . "<br>" . $conn->error;
+  }
+}
 
 
 

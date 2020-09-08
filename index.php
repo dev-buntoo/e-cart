@@ -1,7 +1,7 @@
 <?php
     include("includes/db.php");
-    include("includes/functions.php");
     include("includes/session.php");
+    include("includes/functions.php");
     ?>
 <!DOCTYPE html>
 <html>
@@ -67,14 +67,36 @@ if (mysqli_num_rows($fetch)>0){?>
                                 ?>
                                 <small class="text-success">Reviews ( <?php echo$count; ?> )</small>
                                 </a>
+                                <?php if(isset($_SESSION['super-store-customer'])){ ?>
                                 <div class="row text-center">
                                     <div class="col">
-                                    <?php ?>
-                                        <form method="POST" enctype="multipart/form-data"><button name="add_to fav" class="btn" type="submit" value="<?php echo$product['pro_id']; ?>"><i class="fa fa-heart-o"></i></button></form>
-                                    
+                                    <?php
+                                    $pro_id = $product['pro_id'];
+                                    $sql = "SELECT * FROM fav_tbl WHERE pro_id = '$pro_id' && user_id = '$login_session_id'";
+                                    if(mysqli_num_rows(mysqli_query($conn, $sql)) == 0){
+                                    ?>
+                                        <form method="POST" enctype="multipart/form-data">
+                                        <button name="add_to_fav" class="btn" type="submit" value="<?php echo$product['pro_id']; ?>"><i class="fa fa-heart-o"></i></button>
+                                        </form>
+                                    <?php } else{?>
+                                        <form method="POST" enctype="multipart/form-data">
+                                        <button name="remove_fav" class="btn" type="submit" value="<?php echo$product['pro_id']; ?>"><i class="fa fa-heart"></i></button>
+                                        </form>
+                                    <?php }?>
                                     </div>
                                     <div class="col">
                                         <form method="POST" enctype="multipart/form-data"><button class="btn" type="submit" name="add_to_cart" value="<?php echo$product['pro_id']; ?>"><i class="fa fa-cart-plus"></i></button></form>
+                                    </div>
+                                <?php } else { ?>
+                                    <div class="col">
+                                        <button class="btn" onclick="alert('Please Login First!')"><i class="fa fa-heart-o"></i></button>
+                                    
+                                    </div>
+                                    <div class="col">
+                                       <button class="btn" onclick="alert('Please Login First!')"><i class="fa fa-cart-plus"></i></button></form>
+                                    </div>
+
+                                <?php } ?>
                                     </div>
                                 </div>
                             </div>
@@ -98,7 +120,7 @@ if (mysqli_num_rows($fetch)>0){?>
 
 
 <?php
-$sql = "SELECT * FROM product_tbl WHERE promo = '0' ORDER BY id DESC";
+$sql = "SELECT * FROM product_tbl WHERE promo = '0' ORDER BY RAND() LIMIT 12";
 $fetch = mysqli_query($conn, $sql);
 if (mysqli_num_rows($fetch)>0){
     foreach($fetch as $product){
@@ -121,16 +143,40 @@ if (mysqli_num_rows($fetch)>0){
                                 ?>
                                 <small class="text-success">Reviews ( <?php echo$count; ?> )</small>
                                 </a>
+
                                 <div class="row text-center">
+                                <?php if(isset($_SESSION['super-store-customer'])){ ?>
+
                                     <div class="col">
-                                    <?php ?>
-                                        <form method="POST" enctype="multipart/form-data"><button name="add_to fav" class="btn" type="submit" value="<?php echo$product['id']; ?>"><i class="fa fa-heart-o"></i></button></form>
-                                    
+                                    <?php
+                                    $pro_id = $product['id'];
+                                    $sql = "SELECT * FROM fav_tbl WHERE pro_id = '$pro_id' && user_id = '$login_session_id'";
+                                    if(mysqli_num_rows(mysqli_query($conn, $sql)) == 0){
+                                    ?>
+                                        <form method="POST" enctype="multipart/form-data">
+                                        <button name="add_to_fav" class="btn" type="submit" value="<?php echo$product['id']; ?>"><i class="fa fa-heart-o"></i></button>
+                                        </form>
+                                    <?php } else{?>
+                                        <form method="POST" enctype="multipart/form-data">
+                                        <button name="remove_fav" class="btn" type="submit" value="<?php echo$product['id']; ?>"><i class="fa fa-heart"></i></button>
+                                        </form>
+                                    <?php }?>
                                     </div>
                                     <div class="col">
                                         <form method="POST" enctype="multipart/form-data"><button class="btn" type="submit" name="add_to_cart" value="<?php echo$product['id']; ?>"><i class="fa fa-cart-plus"></i></button></form>
                                     </div>
+                                <?php } else { ?>
+                                    <div class="col">
+                                        <button class="btn" onclick="alert('Please Login First!')"><i class="fa fa-heart-o"></i></button>
+                                    
+                                    </div>
+                                    <div class="col">
+                                       <button class="btn" onclick="alert('Please Login First!')"><i class="fa fa-cart-plus"></i></button></form>
+                                    </div>
+
+                                <?php } ?>
                                 </div>
+
                             </div>
                         </div> 
                 
@@ -141,6 +187,7 @@ if (mysqli_num_rows($fetch)>0){
 
             </div>
         </div>
+        <p class="text-center text-success"> Browse more in categories </p>
     </div>
    
     <?php
