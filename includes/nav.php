@@ -34,8 +34,23 @@
     if(isset($_SESSION['super-store-customer'])){
 ?>
                 <li class="nav-item nav-link js-scroll-trigger" role="presentation">
-                    <a class="nav-link js-scroll-trigger" href="">
-                        <i class="fa fa-opencart"></i>
+                    <a class="nav-link js-scroll-trigger" href="cart.php">
+                        <i class="fa fa-opencart">
+                            <sup class="rounded-circle" style="color:red; background: black; padding:5px">
+                            <?php
+                                $cart_counter_sql = "SELECT cart_tbl.id
+                                FROM
+                                cart_tbl
+                                INNER JOIN order_tbl ON cart_tbl.order_id = order_tbl.id
+                                WHERE
+                                order_tbl.status = 'unchecked' AND order_tbl.user_id = $login_session_id";
+                                $total_items = mysqli_num_rows(mysqli_query($conn, $cart_counter_sql));
+                                echo $total_items;
+                            ?>
+                            
+                            </sup>
+                        </i>
+                        
                     </a>
                 </li>
                 <li class="nav-item nav-link js-scroll-trigger" role="presentation" style="padding-top: 16px;">

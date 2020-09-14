@@ -242,4 +242,36 @@ if(isset($_POST['add_to_cart'])){
 
 
 
+
+//This function update quantity of producy
+if(isset($_POST['update_quantity'])){
+  $cart_id = $_POST['update_quantity'];
+  $quntity = $_POST['pro_quantity'];
+  $sql = "UPDATE cart_tbl SET quantity = '$quntity' WHERE id = '$cart_id'";
+  
+
+  if($conn->query($sql) === TRUE){
+    echo "
+      <script type='text/javascript'>window.open('','_self')</script>
+      ";
+  }
+  else{
+    echo "Error: " . $sql . "<br>" . $conn->error;
+  }
+}
+
+if(isset($_POST['remove_from_cart'])){
+  $cart_id = $_POST['remove_from_cart'];
+  $sql = "DELETE FROM cart_tbl WHERE id = '$cart_id'";
+  
+
+  if($conn->query($sql) === TRUE){
+    echo "
+      <script type='text/javascript'>window.open('','_self')</script>
+      ";
+  }
+  else{
+    echo "Error: " . $sql . "<br>" . $conn->error;
+  }
+}
 ?>
