@@ -83,7 +83,7 @@
                         </div>
                     </div>
                     <div class="col-2 text-center">
-                    <strong>Quantity</strong>
+                    <strong>Total</strong>
                         <div>
                             <?php echo $item['pro_price']*$item['pro_quantity'] ?>
                         </div>

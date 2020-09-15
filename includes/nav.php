@@ -58,6 +58,7 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"><?php echo $login_session_name ?></a>
                         <div class="dropdown-menu" role="menu">
                             <a class="dropdown-item" role="presentation" href="#" style="color: rgb(0,0,0);">Profile</a>
+                            <a class="dropdown-item" role="presentation" href="orders.php" style="color: rgb(0,0,0);">Orders</a>
                             <form method="post">
                                 <button name="signout" class="dropdown-item" role="presentation"  style="color: rgb(0,0,0);">SIGN OUT</button>
                             </form>

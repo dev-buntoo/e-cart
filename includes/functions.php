@@ -274,4 +274,49 @@ if(isset($_POST['remove_from_cart'])){
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
 }
+
+
+
+
+
+
+if(isset($_POST['place_order'])){
+  $name = $_POST['name'];
+  $phone =$_POST['phone'];
+  $province = $_POST['province'];
+  $city =$_POST['city'];
+  $address =$_POST['address'];
+  $payment =$_POST['payment_type'];
+  if($payment == 'Online'){
+  $c_no =$_POST['c_no'];
+  $c_p =$_POST['c_pas'];
+    if ( $c_no == '0' || $c_p == '0' ){
+       echo "<script> window.alert('insert card number and pasword');</script>";
+      die();
+  }
+  }else{
+    $c_no = '';
+    $c_p ='';
+  }
+  $sql = "UPDATE order_tbl set
+  r_name = '$name',
+  r_phone = '$phone',
+  r_province = '$province',
+  r_city = '$city',
+  r_address = '$address',
+  payment_type = '$payment',
+  card_no = '$c_no',
+  card_password = '$c_p',
+  status = 'unconfirmed',
+  total_price = $total_price,
+  status_description = 'Your Order has been places succesfuly and is under review by seller store. Please wait your order will be confirmed soon'
+  WHERE id = $order_id
+  ";
+  if($conn -> query($sql) === TRUE )
+  {
+    echo "<script> window.alert('Order Placed Succesfully');</script>
+    <script type='text/javascript'>window.open('orders.php','_self')</script>";
+
+  }
+}
 ?>
