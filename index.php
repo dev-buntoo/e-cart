@@ -61,11 +61,11 @@ if (mysqli_num_rows($fetch)>0){?>
                                     </p>
                                 <?php
                                     $pro_id = $product['pro_id'];
-                                    $r_sql = "SELECT id FROM review_tbl WHERE pro_id = '$pro_id'";
+                                    $r_sql = "SELECT id FROM feedback_tbl WHERE pro_id = '$pro_id'";
                                     $run = mysqli_query($conn, $r_sql);
                                     $count = mysqli_num_rows($run);
                                 ?>
-                                <small class="text-success">Reviews ( <?php echo$count; ?> )</small>
+                                <small class="text-success">Feedbacks ( <?php echo$count; ?> )</small>
                                 </a>
                                 
                                 <div class="row text-center">
@@ -138,11 +138,11 @@ if (mysqli_num_rows($fetch)>0){
                                     </p>
                                 <?php
                                     $pro_id = $product['id'];
-                                    $r_sql = "SELECT id FROM review_tbl WHERE pro_id = '$pro_id'";
+                                    $r_sql = "SELECT id FROM feedback_tbl WHERE pro_id = '$pro_id'";
                                     $run = mysqli_query($conn, $r_sql);
                                     $count = mysqli_num_rows($run);
                                 ?>
-                                <small class="text-success">Reviews ( <?php echo$count; ?> )</small>
+                                <small class="text-success">Feedbacks ( <?php echo$count; ?> )</small>
                                 </a>
 
                                 <div class="row text-center">

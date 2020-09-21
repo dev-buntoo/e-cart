@@ -3,6 +3,9 @@ session_start();
 $error = '';
     include("includes/db.php");
     include("includes/functions.php");
+    if(isset($_SESSION['super-store-customer'])){
+        header("Location: index.php");
+    }
     ?>
 <!DOCTYPE html>
 <html>

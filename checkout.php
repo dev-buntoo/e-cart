@@ -1,6 +1,9 @@
 <?php
     include("includes/db.php");
     include("includes/session.php");
+    if(!isset($_SESSION['super-store-customer'])){
+        header("Location: index.php");
+    }
     ?>
 <!DOCTYPE html>
 <html>

@@ -279,7 +279,7 @@ if(isset($_POST['remove_from_cart'])){
 
 
 
-
+//this function Places order
 if(isset($_POST['place_order'])){
   $name = $_POST['name'];
   $phone =$_POST['phone'];
@@ -319,4 +319,35 @@ if(isset($_POST['place_order'])){
 
   }
 }
+
+
+
+
+
+
+//this function add feedback to the product\
+if(isset($_POST['add_feedback'])){
+$feedback = $_POST['feedback'];
+$sql = " INSERT INTO feedback_tbl (order_id, store_id, pro_id, user_id, feedback) VALUES ('$order_id', '$store_id', '$pro_id', '$login_session_id', '$feedback')";
+if($conn -> query($sql) === TRUE )
+  {
+    echo "<script> window.alert('Thank You For Your Feedback');</script>
+    <script type='text/javascript'>window.open('orders.php','_self')</script>";
+
+  }
+  else{
+    echo "Error: " . $sql . "<br>" . $conn->error;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 ?>
