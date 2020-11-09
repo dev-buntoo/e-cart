@@ -87,10 +87,5 @@
                 <a class="list-group-item list-group-item-action bg-light" href="add_promo.php">Add Promotion</a>
             </li>
         </ul>
-
-
-
-        <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
-
     </div>
 </div>

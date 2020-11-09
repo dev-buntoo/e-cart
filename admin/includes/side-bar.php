@@ -69,8 +69,6 @@
                 <a class="list-group-item list-group-item-action bg-light" href="stores_list.php">Stores Reports</a>
             </li>
         </ul>
-        
-        <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
-
+ 
     </div>
 </div>

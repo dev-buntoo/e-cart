@@ -53,8 +53,35 @@ include("includes/functions.php");
                     <h1 class="mt-4">Helper Seller's Panel</h1>
                     <?php
                     }
+                    $sql = "SELECT
+                    warning_tbl.message AS msg,
+                    feedback_tbl.feedback AS feedback
+                    FROM
+                        warning_tbl
+                    INNER JOIN feedback_tbl ON warning_tbl.feedback_id = feedback_tbl.id
+                    WHERE
+                        feedback_tbl.store_id = $store_id";
+                        $fetch = mysqli_query($conn, $sql);
+                        if (mysqli_num_rows($fetch) > 0)
+                        {
+                        foreach( $fetch as $row){
                     ?>
-                    <p> Page Content Goes Here</p>
+                    <div class="card text-white bg-danger m-3" >
+  <div class="card-header">Warning</div>
+  <div class="card-body">
+    <h5 class="card-title">Warning Messages against feedback "<?php echo htmlentities($row['feedback']) ?>" </h5>
+    <p class="card-text">"<?php echo htmlentities($row['msg']);?>"</p>
+  </div>
+</div>
+<?php
+                                
+                                }
+                                
+                             }
+                                else {
+                                    echo "Nothing to show";
+                                }
+                                ?>
 
 
 
