@@ -378,6 +378,22 @@ if(isset($_POST['delete_customer'])){
    
    }
 
+      //This function will create warning
+if(isset($_POST['add_warning'])){
+   $message = $_POST['message'];
+   $sql = "INSERT INTO warning_tbl (feedback_id, message)
+   VALUES ('$f_id', '$message')";
+
+
+   if ($conn->query($sql) === TRUE) { 
+      echo "<script> window.alert('Warning Added Successfully');</script>
+      <script type='text/javascript'>window.open('feedbacks.php','_self')</script>
+      ";
+   } else {
+     echo "Error: " . $sql . "<br>" . $conn->error;
+   }
+   
+   }
 
 
 ?>

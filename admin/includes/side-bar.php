@@ -19,6 +19,15 @@
                 <a class="list-group-item list-group-item-action bg-light" href="add_admin.php">Add Admin</a>
             </li>
         </ul>
+        <a href="#feedback" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-light">Feedback</a>
+        <ul class="collapse list-unstyled list-group-item list-group-item-action bg-light" id="feedback">
+            <li>
+                <a class="list-group-item list-group-item-action bg-light" href="feedbacks.php">All Feedbacks</a>
+            </li>
+            <li>
+                <a class="list-group-item list-group-item-action bg-light" href="warnings.php">Warnings</a>
+            </li>
+        </ul>
 
         <a href="#seller_list" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-light">Seller</a>
         <ul class="collapse list-unstyled list-group-item list-group-item-action bg-light" id="seller_list">
