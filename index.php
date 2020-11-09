@@ -51,7 +51,7 @@ if (mysqli_num_rows($fetch)>0){?>
                 <div class="col-md-3 product-box">
                     
                         <div class="product">
-                            <a style="color: white ;" href="pro_detail.php?product=<?php echo$product['pro_id']; ?>">
+                            <a style="color: white ;" href="promo_pro.php?product=<?php echo$product['pro_id']; ?>">
                             <div class="text-center"><img class="pro-img" src="products-images/<?php echo$product['pro_img']; ?>"></div>
                             <div class="text-center pro-desc">
                                 <h5><small><?php echo$product['pro_name']; ?></small></h5>

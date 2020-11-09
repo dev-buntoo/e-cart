@@ -3,37 +3,39 @@
     include("includes/session.php");
     include("includes/functions.php");
     $id = $_GET['product'];
-
     ?>
 <!DOCTYPE html>
 <html>
-
 <head>
 <!-- Including Head -->
 <?php
     include("includes/head.php");
     ?>
 </head>
-
 <body id="page-top">
-   
 <?php
     include("includes/nav.php");
     ?>
     <div class="product-listing">
         <div class="container mt-5">
             <div class="row listing-row">
-
-
 <?php
-$sql = "SELECT * FROM product_tbl WHERE id = $id";
+$sql = "SELECT
+product_tbl.id AS id,
+product_tbl.name AS name,
+product_tbl.price AS old_price,
+product_tbl.image AS image,
+promos_tbl.promo_price AS new_price,
+product_tbl.store_id AS store_id
+FROM
+product_tbl
+INNER JOIN promos_tbl ON product_tbl.id = promos_tbl.pro_id
+WHERE product_tbl.id = $id";
 $fetch = mysqli_query($conn, $sql);
 $product = mysqli_fetch_array($fetch);
 ?>
                 <div class="col-md-12 product-box m-2">
-                    
                         <div class="product">
-                        
                             <div class="text-left"><img height = 350px width=100% src="products-images/<?php echo$product['image']; ?>"></div>
                             <div class="text-center pro-desc mt-5">
                                 <h5><small><?php echo$product['name']; ?></small></h5>
@@ -43,8 +45,9 @@ $product = mysqli_fetch_array($fetch);
                                 $store = mysqli_fetch_array(mysqli_query($conn, $r_sql));
                                 ?>
                                 <h5><small><?php echo htmlentities($store['name']);?></small></h5>
-                                    <p style="font-size:small">
-                                        <b class="text-warning">Price:<?php echo$product['price'];?>$</b>
+                                <p style="font-size:smaller">
+                                        <strike class=" text-danger">Old Price:<?php echo$product['old_price'];?>$</strike>
+                                        <b class="text-warning">New Price:<?php echo$product['new_price'];?>$</b>
                                     </p>
                                     <div class="text-left m-5">
                                     <h5>Feedbacks</h5>
@@ -83,15 +86,12 @@ $product = mysqli_fetch_array($fetch);
                                 <?php } else { ?>
                                     <div class="col">
                                         <button class="btn" onclick="alert('Please Login First!')"><i class="fa fa-heart-o"></i></button>
-                                    
                                     </div>
                                     <div class="col">
                                        <button class="btn" onclick="alert('Please Login First!')"><i class="fa fa-cart-plus"></i></button></form>
                                     </div>
-
                                 <?php } ?>
                                 </div>
-
                             </div>
                         </div> 
                 </div>
@@ -104,5 +104,4 @@ $product = mysqli_fetch_array($fetch);
     include("includes/script.php");
     ?>
 </body>
-
 </html>
