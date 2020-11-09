@@ -54,12 +54,13 @@
 
 
 
-        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-light">Home</a>
-        <ul class="collapse list-unstyled list-group-item list-group-item-action bg-light" id="homeSubmenu">
+        <a href="#report" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-light">Reports</a>
+        <ul class="collapse list-unstyled list-group-item list-group-item-action bg-light" id="report">
             <li>
-                <a class="list-group-item list-group-item-action bg-light" href="">Home 1</a>
+                <a class="list-group-item list-group-item-action bg-light" href="stores_list.php">Stores Reports</a>
             </li>
         </ul>
+        
         <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
 
     </div>
