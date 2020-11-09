@@ -451,6 +451,24 @@ if(isset($_POST['update_promo'])){
 
 
 
+      //This function Update Order Status
+      if(isset($_POST['update_order'])){
+         $name = $_POST['status'];
+         $order_id = $_POST['update_order'];
+            $sql = "UPDATE order_tbl SET
+            status = '$name'
+            WHERE id = $order_id ";
+         
+         if ($conn->query($sql) === TRUE) {
+           echo "
+           <script type='text/javascript'>window.open('orders.php','_self')</script>
+           ";
+         } else {
+           echo "Error: " . $sql . "<br>" . $conn->error;
+         }
+         
+      
+         }
 
 
 ?>

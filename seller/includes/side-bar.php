@@ -11,6 +11,25 @@
         <a href="index.php" class="list-group-item list-group-item-action bg-light">Dashboard</a>
 
 
+        <a href="#orders" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-light">Orders</a>
+        <ul class="collapse list-unstyled list-group-item list-group-item-action bg-light" id="orders">
+            <li>
+                <a class="list-group-item list-group-item-action bg-light" href="orders.php">All Orders</a>
+            </li>
+            <li>
+                <a class="list-group-item list-group-item-action bg-light" href="uncon_orders.php">Unconfirmed Orders</a>
+            </li>
+            <li>
+                <a class="list-group-item list-group-item-action bg-light" href="inprogress_orders.php">Inprogress Orders</a>
+            </li>
+            <li>
+                <a class="list-group-item list-group-item-action bg-light" href="completed_orders.php">Completed Orders</a>
+            </li>
+            <li>
+                <a class="list-group-item list-group-item-action bg-light" href="cancel_orders.php">Canceled Orders</a>
+            </li>
+        </ul>
+
 
         <a href="#category_list" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-light">Category</a>
         <ul class="collapse list-unstyled list-group-item list-group-item-action bg-light" id="category_list">
