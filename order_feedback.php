@@ -57,7 +57,7 @@
                         $get_items = mysqli_query($conn, $sql);
                         foreach($get_items as $item){
                     ?>
-                    <div class="row">
+                    <div class="row mt-3">
                     <div class="col-4"><?php echo $item['pro_name']; ?></div>
                     <?php
                     $sql1 = "SELECT * FROM feedback_tbl WHERE order_id = $order_id AND pro_id =" . $item['pro_id'];
@@ -73,6 +73,7 @@
                         <?php  }else{?>
                             <div class="col-8"> 
                               <a href="add_feedback.php?order=<?php echo $order_id;?>&store=<?php echo $order['store_id'];?>&pro=<?php echo $item['pro_id'];?>" class= "btn btn-warning">Add Feedback</a>    
+                            </div>
                             </div>
                         <?php  } ?>
                 <?php  } ?>
