@@ -341,7 +341,89 @@ if($conn -> query($sql) === TRUE )
 }
 
 
+//This function Update Customer
+if(isset($_POST['update_pro'])){
 
+  $update_id = $_POST['update_pro'];
+  $name = $_POST['name'];
+  $phone = $_POST['phone'];
+  $address = $_POST['address'];
+  $city = $_POST['city'];
+  $state = $_POST['state'];
+
+  $sql = " UPDATE customer_tbl SET 
+  name = '$name',
+  phone = '$phone',
+  address = '$address', 
+  city = '$city', 
+  state = '$state'
+  WHERE id = '$update_id' ";
+
+
+  if ($conn->query($sql) === TRUE) { 
+     echo "<script> window.alert('Record Updated Successfully');</script>
+     <script type='text/javascript'>window.open('profile.php','_self')</script>
+     ";
+  } else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+  }
+  
+  }
+  
+//This function Update Customer Pasword
+if(isset($_POST['update_pas'])){
+
+  $update_id = $_POST['update_pas'];
+  $password = $_POST['password'];
+
+  $sql = " UPDATE customer_tbl SET 
+  password = '$password'
+  WHERE id = '$update_id'";
+
+
+  if ($conn->query($sql) === TRUE) { 
+     echo "<script> window.alert('Record Updated Successfully');</script>
+     <script type='text/javascript'>window.open('profile.php','_self')</script>
+     ";
+  } else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+  }
+  
+  }
+
+  //This function Update Customer account
+if(isset($_POST['del_account'])){
+
+  $u_id = $_POST['del_account'];
+  $sql1 = "SELECT * FROM order_tbl Where user_id = $u_id AND `status` != 'delivered' AND status != 'canceled' AND status != 'delivered'";
+  $run = mysqli_query($conn, $sql1);
+  $count = mysqli_num_rows($run);
+  if($count == 0){
+   $sql2 = "DELETE FROM order_tbl where user_id = $u_id";
+   $sql3 = "DELETE FROM fav_tbl where user_id = $u_id";
+   $sql4 = "DELETE FROM feedback_tbl where user_id = $u_id";
+   $sql5 = "DELETE FROM customer_tbl where id = $u_id";
+   $run2 = mysqli_query($conn, $sql2);
+   $run3 = mysqli_query($conn, $sql3);
+   $run4 = mysqli_query($conn, $sql4);
+   $run5 = mysqli_query($conn, $sql5);
+   if($run2 && $run3 && $run4 && $run5)
+   {
+    session_start();
+ 
+    unset($_SESSION["super-store-customer"]);
+       header("Location: index.php");
+    echo "<script> window.alert('Thank You for using our services. Account deleted Succesfully');</script>";
+   }
+   else{
+    echo "<script> window.alert('Unable To Delete Account');</script>";
+   }
+  }
+  else{
+    echo "<script> window.alert('Orders In Progress. Unable To Delete Account');</script>";
+  }
+  
+  }
 
 
 
