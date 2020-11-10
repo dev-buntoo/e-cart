@@ -2,10 +2,10 @@
         <div class="intro-body">
             <div class="container">
                 <div class="row search-row"><div class="col-md-6 offset-md-3 ">
-    <form>
+    <form method= "GET" action="search_res.php">
         <div class="input-group d-inline-flex">
-            <div class="input-group-prepend"><span class="input-group-text" style="background-color: rgba(233,236,239,0.48);color: rgb(0,0,0);">Search</span></div><input type="text" class="form-control" />
-            <div class="input-group-append"><button class="btn btn-primary" type="button">Search</button></div>
+            <div class="input-group-prepend"><span class="input-group-text" style="background-color: rgba(233,236,239,0.48);color: rgb(0,0,0);">Search</span></div><input type="text" class="form-control" name = "keyword"/>
+            <div class="input-group-append"><button class="btn btn-primary" type="submit">Search</button></div>
         </div>
     </form>
 </div></div>
