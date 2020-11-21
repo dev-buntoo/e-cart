@@ -18,7 +18,7 @@
 <?php
     include("includes/nav.php");
     ?>
-    <header class="about-us" style="background-image: linear-gradient(rgba(14,14,14,0.66), rgba(14,14,14,0.66)),  url(&quot;assets/img/bg.png&quot;);">
+    <header class="about-us">
         <div class="intro-body">
             <div class="container">
                 <div class="row">

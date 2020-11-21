@@ -1,8 +1,8 @@
 <?php
        session_start();
-      if(isset($_SESSION['super-store-admin'])){
+      if(isset($_SESSION['e-cart-admin'])){
         
-      $user_check = $_SESSION['super-store-admin'];
+      $user_check = $_SESSION['e-cart-admin'];
       $query = "SELECT * FROM admin_tbl WHERE id = '$user_check' ";
       $ses_sql = mysqli_query($conn,$query);
       $user_row = mysqli_fetch_array($ses_sql);

@@ -40,7 +40,7 @@ include("includes/session.php");
                     <!-- Page Content -->
 
 
-                    <h4 class="mt-4">All Categories</h3>
+                    <h4 class="mt-4">All Helpers</h3>
                         <hr>
                         <div class="container" style="padding: 70px;">
                         <table class="table table-bordered">

@@ -4,7 +4,7 @@
 if(isset($_POST['signout'])){
   session_start();
  
-  unset($_SESSION["super-store-customer"]);
+  unset($_SESSION["e-cart-customer"]);
      header("Location: index.php");
 }
 
@@ -30,7 +30,7 @@ if(isset($_POST['signin'])){
  
   if($count == 1) {
 
-     $_SESSION['super-store-customer'] = $row['id'];
+     $_SESSION['e-cart-customer'] = $row['id'];
  
      header("location: index.php");
   }else {
@@ -411,7 +411,7 @@ if(isset($_POST['del_account'])){
    {
     session_start();
  
-    unset($_SESSION["super-store-customer"]);
+    unset($_SESSION["e-cart-customer"]);
        header("Location: index.php");
     echo "<script> window.alert('Thank You for using our services. Account deleted Succesfully');</script>";
    }

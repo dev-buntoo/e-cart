@@ -4,7 +4,7 @@ $error = "";
 include("includes/db.php");
 include("includes/functions.php");
 
-if(isset($_SESSION['super-store-seller'])){
+if(isset($_SESSION['e-cart-seller'])){
     header("Location: index.php"); /* Redirect browser */
 }
 ?>

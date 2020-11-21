@@ -35,9 +35,9 @@ $fetch = mysqli_query($conn, $sql);
 $product = mysqli_fetch_array($fetch);
 ?>
                 <div class="col-md-12 product-box m-2">
-                        <div class="product">
-                            <div class="text-left"><img height = 350px width=100% src="products-images/<?php echo$product['image']; ?>"></div>
-                            <div class="text-center pro-desc mt-5">
+                        <div class="product row">
+                            <div class="col-md-6 text-left"><img height = 350px width=100% src="products-images/<?php echo$product['image']; ?>"></div>
+                            <div class="col-md-6 text-center pro-desc mt-5">
                                 <h5><small><?php echo$product['name']; ?></small></h5>
                                 <?php 
                                 $store_id = $product['store_id'];
@@ -49,21 +49,9 @@ $product = mysqli_fetch_array($fetch);
                                         <strike class=" text-danger">Old Price:<?php echo$product['old_price'];?>$</strike>
                                         <b class="text-warning">New Price:<?php echo$product['new_price'];?>$</b>
                                     </p>
-                                    <div class="text-left m-5">
-                                    <h5>Feedbacks</h5>
-                                    <ol>
-                                <?php
-                                    $pro_id = $product['id'];
-                                    $r_sql = "SELECT * FROM feedback_tbl WHERE pro_id = '$pro_id'";
-                                    $run = mysqli_query($conn, $r_sql);
-                                    foreach($run as $feedback){
-                                        echo "<li>" . $feedback['feedback'] . "</li>";
-                                    }
-                                ?>
-                                </ol>
-                                </div>
+                                    
                                 <div class="row text-center">
-                                <?php if(isset($_SESSION['super-store-customer'])){ ?>
+                                <?php if(isset($_SESSION['e-cart-customer'])){ ?>
 
                                     <div class="col">
                                     <?php
@@ -91,6 +79,19 @@ $product = mysqli_fetch_array($fetch);
                                        <button class="btn" onclick="alert('Please Login First!')"><i class="fa fa-cart-plus"></i></button></form>
                                     </div>
                                 <?php } ?>
+                                </div>
+                                <div class="text-left m-5">
+                                    <h5>Feedbacks</h5>
+                                    <ol>
+                                <?php
+                                    $pro_id = $product['id'];
+                                    $r_sql = "SELECT * FROM feedback_tbl WHERE pro_id = '$pro_id'";
+                                    $run = mysqli_query($conn, $r_sql);
+                                    foreach($run as $feedback){
+                                        echo "<li>" . $feedback['feedback'] . "</li>";
+                                    }
+                                ?>
+                                </ol>
                                 </div>
                             </div>
                         </div> 

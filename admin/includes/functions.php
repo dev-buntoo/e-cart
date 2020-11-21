@@ -5,7 +5,7 @@
 if(isset($_POST['logout'])){
     session_start();
    
-    unset($_SESSION["super-store-admin"]);
+    unset($_SESSION["e-cart-admin"]);
        header("Location: ../login.php");
 }
 
@@ -26,7 +26,7 @@ if(isset($_POST['login'])){
 
  if($count == 1) {
 
-    $_SESSION['super-store-admin'] = $row['id'];
+    $_SESSION['e-cart-admin'] = $row['id'];
 
     header("location: index.php");
  }else {

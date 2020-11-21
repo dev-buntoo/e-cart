@@ -17,18 +17,6 @@
 <?php
     include("includes/nav.php");
     ?>
-
-<header class="contact-us-top" style="background-image: linear-gradient(rgba(14,14,14,0.66), rgba(14,14,14,0.66)),  url(&quot;assets/img/bg.png&quot;);">
-        <div class="contact-us-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <h3 class="text-center">Seller Registration</h3>
-                    </div>
-                </div>
-            </div> 
-        </div>
-    </header>
     <div class="contact-clean">
         <form method="post">
             <h2 class="text-center">Seller Registration Form</h2>

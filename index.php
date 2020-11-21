@@ -17,14 +17,12 @@
    
 <?php
     include("includes/nav.php");
-    include("includes/search.php");
     ?>
     <div class="product-listing">
         <div class="container">
-            <div class="row text-center text-white-50">
+            <div class="row text-center">
                 <div class="col-md-12">
-                    <h1>Promotions</h1>
-                    <p>FIND PRODUCTS AT DISCOUNTED PRICE</p>
+                    <h3>Hot Sale</h3>
                 </div>
             </div>
             
@@ -51,7 +49,7 @@ if (mysqli_num_rows($fetch)>0){?>
                 <div class="col-md-3 product-box">
                     
                         <div class="product">
-                            <a style="color: white ;" href="promo_pro.php?product=<?php echo$product['pro_id']; ?>">
+                            <a href="promo_pro.php?product=<?php echo$product['pro_id']; ?>">
                             <div class="text-center"><img class="pro-img" src="products-images/<?php echo$product['pro_img']; ?>"></div>
                             <div class="text-center pro-desc">
                                 <h5><small><?php echo$product['pro_name']; ?></small></h5>
@@ -69,7 +67,7 @@ if (mysqli_num_rows($fetch)>0){?>
                                 </a>
                                 
                                 <div class="row text-center">
-                                <?php if(isset($_SESSION['super-store-customer'])){ ?>
+                                <?php if(isset($_SESSION['e-cart-customer'])){ ?>
 
                                     <div class="col">
                                     <?php
@@ -87,7 +85,7 @@ if (mysqli_num_rows($fetch)>0){?>
                                     <?php }?>
                                     </div>
                                     <div class="col">
-                                        <form method="POST" enctype="multipart/form-data"><button class="btn" type="submit" name="add_to_cart" value="<?php echo$product['pro_id']; ?>"><i class="fa fa-cart-plus"></i></button></form>
+                                        <form method="POST" enctype="multipart/form-data"><button class="btn" type="submit" name="add_to_cart" value="<?php echo$product['pro_id']; ?>"><i class="fa fa-cart"></i></button></form>
                                     </div>
                                 <?php } else { ?>
                                     <div class="col">
@@ -109,19 +107,18 @@ if (mysqli_num_rows($fetch)>0){?>
 </div>
 <div class="row offset-5" style="padding-bottom: 25px;"> <a href="products_in_promition.php" class="btn btn-outline-light"> Show All </a> </div>
 <?php } else {
-        echo 'Nothing to Show In Promotions';} ?>
+        echo 'Nothing to Show In Sale';} ?>
             
-            <div class="row text-center text-white-50">
+            <div class="row text-center">
                 <div class="col-md-12">
-                    <h1>Product Listings</h1>
-                    <p>FIND THE PRODUCT OF YOUR OWN CHOICE</p>
+                    <h3>Products</h3>
                 </div>
             </div>
             <div class="row listing-row">
 
 
 <?php
-$sql = "SELECT * FROM product_tbl WHERE promo = '0' ORDER BY RAND() LIMIT 12";
+$sql = "SELECT * FROM product_tbl WHERE promo = '0' ORDER BY RAND()";
 $fetch = mysqli_query($conn, $sql);
 if (mysqli_num_rows($fetch)>0){
     foreach($fetch as $product){
@@ -129,7 +126,7 @@ if (mysqli_num_rows($fetch)>0){
                 <div class="col-md-3 product-box">
                     
                         <div class="product">
-                        <a style="color: white ;" href="pro_detail.php?product=<?php echo$product['id']; ?>">
+                        <a href="pro_detail.php?product=<?php echo$product['id']; ?>">
                             <div class="text-center"><img class="pro-img" src="products-images/<?php echo$product['image']; ?>"></div>
                             <div class="text-center pro-desc">
                                 <h5><small><?php echo$product['name']; ?></small></h5>
@@ -146,7 +143,7 @@ if (mysqli_num_rows($fetch)>0){
                                 </a>
 
                                 <div class="row text-center">
-                                <?php if(isset($_SESSION['super-store-customer'])){ ?>
+                                <?php if(isset($_SESSION['e-cart-customer'])){ ?>
 
                                     <div class="col">
                                     <?php
@@ -188,7 +185,6 @@ if (mysqli_num_rows($fetch)>0){
 
             </div>
         </div>
-        <p class="text-center text-success"> Browse more in categories </p>
     </div>
    
     <?php

@@ -1,7 +1,7 @@
 <?php
     include("includes/db.php");
     include("includes/functions.php");
-    if(isset($_SESSION['super-store-customer'])){
+    if(isset($_SESSION['e-cart-customer'])){
         header("Location: index.php");
     }
     ?>
@@ -21,18 +21,7 @@
     include("includes/nav.php");
     ?>
 
-<header class="contact-us-top" style="background-image: linear-gradient(rgba(14,14,14,0.66), rgba(14,14,14,0.66)),  url(&quot;assets/img/bg.png&quot;);">
-        <div class="contact-us-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <h3 class="text-center">Sign Up</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <div class="contact-clean">
+    <div class="contact-clean mt-5">
         <form method="post">
             <h2 class="text-center">Signup</h2>
             <div class="form-group"><input class="form-control form-control-input" type="text" name="name" placeholder="Name" required></div>

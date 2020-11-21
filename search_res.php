@@ -21,9 +21,8 @@
     ?>
     <div class="product-listing">
         <div class="container mt-5">
-            <div class="row text-center text-white-50">
+            <div class="row text-center">
                 <div class="col-md-12">
-                    <h1>Product Listings</h1>
                     <p>Showing Search Result of "<?php echo htmlentities($keyword) ?>"</p>
                 </div>
             </div>
@@ -39,7 +38,7 @@ if (mysqli_num_rows($fetch)>0){
                 <div class="col-md-3 product-box">
                     
                         <div class="product">
-                        <a style="color: white ;" href="pro_detail.php?product=<?php echo$product['id']; ?>">
+                        <a href="pro_detail.php?product=<?php echo$product['id']; ?>">
                             <div class="text-center"><img class="pro-img" src="products-images/<?php echo$product['image']; ?>"></div>
                             <div class="text-center pro-desc">
                                 <h5><small><?php echo$product['name']; ?></small></h5>
@@ -56,7 +55,7 @@ if (mysqli_num_rows($fetch)>0){
                                 </a>
 
                                 <div class="row text-center">
-                                <?php if(isset($_SESSION['super-store-customer'])){ ?>
+                                <?php if(isset($_SESSION['e-cart-customer'])){ ?>
 
                                     <div class="col">
                                     <?php

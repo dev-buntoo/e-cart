@@ -1,5 +1,5 @@
 .contact-clean {
-	background: #2a2a2a;
+	background: transparent;
 	padding: 80px 0
 }
 
@@ -75,10 +75,6 @@
 }
 
 
-.product-box:hover {
-	opacity: 1
-}
-
 .contact-clean form .btn:active {
 	transform: translateY(1px)
 }
@@ -107,17 +103,15 @@
 }
 
 .fa.fa-opencart {
-	color: #fff;
+	color: rgb(0, 0, 0);
 	padding-right: 15px;
 	font-size: x-large
 }
 
-.row.search-row {
-	margin: 25px
-}
+
 
 .product-listing {
-	padding-top: 75px
+	padding-top: 70px
 }
 
 .row.listing-row {
@@ -127,7 +121,6 @@
 
 .product-box {
 	padding: 10px;
-	opacity: .5
 }
 
 .product {
@@ -142,21 +135,21 @@
 }
 
 .pro-desc {
-	color: #ebebeb
+	color: #000000
 }
 
 .fa.fa-cart-plus {
 	font-size: xx-large;
-	color: #fff
+	color: rgb(0, 0, 0)
 }
 
 .fa.fa-cart-plus:hover {
-	color: rgba(255, 255, 255, .4)
+	color: rgba(0, 0, 0, 0.4)
 }
 
 .fa.fa-heart-o {
 	font-size: xx-large;
-	color: #fff
+	color: rgb(191, 46, 46)
 }
 
 .fa.fa-heart-o:hover {
@@ -165,7 +158,7 @@
 
 .fa.fa-heart {
 	font-size: xx-large;
-	color: #fff
+	color: rgb(191, 50, 50)
 }
 
 .fa.fa-heart:hover {
@@ -179,7 +172,7 @@
 }
 
 .form-control-input {
-	border-radius: 25px!important
+	border-radius: 0;
 }
 
 .btn-cus {
@@ -187,10 +180,7 @@
 }
 
 .cart-sec {
-	padding-top: 125px;
-	background: linear-gradient(rgba(14, 14, 14, .38), #a2a2a2), url(../../assets/img/bg.png);
-	padding-bottom: 100px;
-	color: #fff;
+	padding-bottom: 25px;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;

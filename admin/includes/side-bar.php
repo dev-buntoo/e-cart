@@ -1,72 +1,70 @@
-<div class="bg-light border-right" id="sidebar-wrapper">
+<div class="bg-dark border-right text-white" id="sidebar-wrapper">
     <b>
-    <div class="sidebar-heading">The Online Super Store </div>
+    <div class="sidebar-heading">E - CART </div>
     <hr>
     <div class="sidebar-heading">Admin Panel </div>
     <hr>
 </b>
     <div class="list-group list-group-flush">
-        <a href="index.php" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+        <a href="index.php" class="list-group-item list-group-item-action bg-dark-50 text-white-50">Dashboard</a>
+        <a href="messages.php" class=" bg-dark-50 text-white-50 list-group-item list-group-item-action ">Messages</a>
 
 
 
-        <a href="#admin_list" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-light">Admin</a>
-        <ul class="collapse list-unstyled list-group-item list-group-item-action bg-light" id="admin_list">
+        <a href="#admin_list" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-dark-50 text-white-50">Admin</a>
+        <ul class="collapse list-unstyled list-group-item list-group-item-action bg-dark-50 text-white-50" id="admin_list">
             <li>
-                <a class="list-group-item list-group-item-action bg-light" href="admins.php">All Admins</a>
+                <a class="list-group-item list-group-item-action text-white-50" href="admins.php">All Admins</a>
             </li>
             <li>
-                <a class="list-group-item list-group-item-action bg-light" href="add_admin.php">Add Admin</a>
+                <a class="list-group-item list-group-item-action text-white-50" href="add_admin.php">Add Admin</a>
             </li>
         </ul>
-        <a href="#feedback" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-light">Feedback</a>
-        <ul class="collapse list-unstyled list-group-item list-group-item-action bg-light" id="feedback">
+        <a href="#feedback" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-dark-50 text-white-50">Feedback</a>
+        <ul class="collapse list-unstyled list-group-item list-group-item-action text-white-50" id="feedback">
             <li>
-                <a class="list-group-item list-group-item-action bg-light" href="feedbacks.php">All Feedbacks</a>
-            </li>
-            <li>
-                <a class="list-group-item list-group-item-action bg-light" href="warnings.php">Warnings</a>
+                <a class="list-group-item list-group-item-action text-white-50" href="feedbacks.php">All Feedbacks</a>
             </li>
         </ul>
 
-        <a href="#seller_list" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-light">Seller</a>
-        <ul class="collapse list-unstyled list-group-item list-group-item-action bg-light" id="seller_list">
+        <a href="#seller_list" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-dark-50 text-white-50">Seller</a>
+        <ul class="collapse list-unstyled list-group-item list-group-item-action text-white-50" id="seller_list">
             <li>
-                <a class="list-group-item list-group-item-action bg-light" href="sellers.php">All Sellers</a>
+                <a class="list-group-item list-group-item-action text-white-50" href="sellers.php">All Sellers</a>
             </li>
             <li>
-                <a class="list-group-item list-group-item-action bg-light" href="add_seller.php">Add Seller</a>
+                <a class="list-group-item list-group-item-action text-white-50" href="add_seller.php">Add Seller</a>
             </li>
         </ul>
 
-        <a href="#store_list" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-light">Stores</a>
-        <ul class="collapse list-unstyled list-group-item list-group-item-action bg-light" id="store_list">
+        <a href="#store_list" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-dark-50 text-white-50">Stores</a>
+        <ul class="collapse list-unstyled list-group-item list-group-item-action text-white-50" id="store_list">
             <li>
-                <a class="list-group-item list-group-item-action bg-light" href="stores.php">All Stores</a>
+                <a class="list-group-item list-group-item-action text-white-50" href="stores.php">All Stores</a>
             </li>
             <li>
-                <a class="list-group-item list-group-item-action bg-light" href="add_store.php">Add Store</a>
+                <a class="list-group-item list-group-item-action text-white-50" href="add_store.php">Add Store</a>
             </li>
         </ul>
 
 
 
-        <a href="#customer_list" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-light">Customers</a>
-        <ul class="collapse list-unstyled list-group-item list-group-item-action bg-light" id="customer_list">
+        <a href="#customer_list" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-dark-50 text-white-50">Customers</a>
+        <ul class="collapse list-unstyled list-group-item list-group-item-action text-white-50" id="customer_list">
             <li>
-                <a class="list-group-item list-group-item-action bg-light" href="customers.php">All Customers</a>
+                <a class="list-group-item list-group-item-action text-white-50" href="customers.php">All Customers</a>
             </li>
             <li>
-                <a class="list-group-item list-group-item-action bg-light" href="add_customer.php">Add Customer</a>
+                <a class="list-group-item list-group-item-action text-white-50" href="add_customer.php">Add Customer</a>
             </li>
         </ul>
 
 
 
-        <a href="#report" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-light">Reports</a>
-        <ul class="collapse list-unstyled list-group-item list-group-item-action bg-light" id="report">
+        <a href="#report" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-dark-50 text-white-50">Reports</a>
+        <ul class="collapse list-unstyled list-group-item list-group-item-action text-white-50" id="report">
             <li>
-                <a class="list-group-item list-group-item-action bg-light" href="stores_list.php">Stores Reports</a>
+                <a class="list-group-item list-group-item-action text-white-50" href="stores_list.php">Stores Reports</a>
             </li>
         </ul>
  

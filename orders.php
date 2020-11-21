@@ -2,7 +2,7 @@
     include("includes/db.php");
     include("includes/session.php");
     include("includes/functions.php");
-    if(!isset($_SESSION['super-store-customer'])){
+    if(!isset($_SESSION['e-cart-customer'])){
         header("Location: index.php");
     }
     ?>
